@@ -1,0 +1,44 @@
+#! /bin/bash
+#================================================================
+# filename: tryINSTALLER
+# description: Install Reboot/Shutdown Scripts and Audio Files 
+# author : k5TRY
+#================================================================
+#
+echo ""
+echo "...dOWNLOADING sCRIPTS!"
+echo ""
+cd /home/irlp/scripts
+wget 28384.asnode.org/tryit/tryReboot -O tryReboot
+wget 28384.asnode.org/tryit/tryShutdown -O tryShutdown
+chmod +x tryReboot
+chmod +x tryShutdown
+echo ""
+echo "...dOWNLOADING aUDIO fILES!"
+echo ""
+cd /home/irlp/audio
+wget 28384.asnode.org/tryit/IRLPreboot.wav -O IRLPreboot.wav
+wget 28384.asnode.org/tryit/IRLPShutdown.wav -O IRLPshutdown.wav
+echo ""
+echo "...dOWNLOADING custom_decode fILE!"
+echo ""
+cd /home/irlp/custom
+wget 28384.asnode.org/tryit/custom_decode -O custom_decode
+echo ""
+echo "...dOWNLOADING sudoers fILE!"
+echo ""
+cd /etc
+wget 28384.asnode.org/tryit/sudoers -O sudoers
+echo ""
+echo "aLL dONE!!!"
+echo ""
+echo "...rEBOOT DTMF -> 888"
+echo "...sHUTDOWN DTMF -> *99"
+echo ""
+echo "NODE WILL NOW REBOOT!!!"
+echo ""
+sleep 4
+reboot
+#================================================================
+exit 0
+
